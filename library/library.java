@@ -8,17 +8,16 @@ public class library
 	{
 		return new StringBuilder(s).reverse().toString();
 	}
-	
+
 	public static boolean isPalindrome(String s)
 	{
 		return s.equals(reverse(s));
 	}
-	
+
 	public static boolean isPalindrome(int x)
 	{
 		return isPalindrome(Integer.toString(x));
 	}
-<<<<<<< HEAD
 
 	public static boolean isPrime(int n) {
 		if (n < 0)
@@ -61,6 +60,4 @@ public class library
 		return primes;
 	}
 
-=======
->>>>>>> parent of e42fbee... Problems 5 and 6
 }
