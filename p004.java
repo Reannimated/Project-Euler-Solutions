@@ -7,9 +7,9 @@ public class p004
 	{
 		int result=0;
 		long start = System.currentTimeMillis();
-		for(int i=100;i<1000;i++)
+		for(int i=900;i<1000;i++)
 		{
-			for(int j=100;j<1000;j++)
+			for(int j=900;j<1000;j++)
 			{
 				if(library.isPalindrome(i*j))
 					if(i*j>result)
