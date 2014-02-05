@@ -1,9 +1,12 @@
 //Run Time: 0ms
-public class p001 {
-	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
+public class p001
+{
+	public static void main(String[] args)
+	{
 		int result=0,i=0;
-		while(i<1000) {
+		long start = System.currentTimeMillis();
+		while(i<1000)
+		{
 			if(i%3==0||i%5==0)
 				result+=i;
 			i++;
