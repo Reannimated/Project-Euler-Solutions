@@ -1,5 +1,7 @@
 package library;
 
+import java.math.BigInteger;
+
 public class library {
 
 	//Returns the reverse of a string. e.g. hello will return olleh
@@ -115,5 +117,15 @@ public class library {
 	        }
 	    }
 		return nod;
+	}
+	
+	//Returns n! e.g. 6! will return 720
+	public static BigInteger factorial(int n) {
+		if (n < 0)
+			throw new IllegalArgumentException("Negative Value");
+		BigInteger num = BigInteger.ONE;
+		for (int i = 2; i <= n; i++)
+			num = num.multiply(BigInteger.valueOf(i));
+		return num;
 	}
 }
