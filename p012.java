@@ -7,6 +7,7 @@ public class p012 {
 		long start = System.currentTimeMillis();
 		int result=0,i=1;
 		int[] primes = library.primeList(50);
+		//Unoptimized Solution: uses trial division
 //		while(library.numberOfDivisors(result)<500)
 //		{
 //			result+=i;
