@@ -1,4 +1,4 @@
-//Run Time: 2ms
+//Run Time: 1ms
 import library.library;
 import java.math.BigInteger;
 public class p020 {
