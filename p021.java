@@ -12,7 +12,7 @@ public class p021 {
 		System.out.println(System.currentTimeMillis()-start+"ms");
 	}
 
-	public static boolean isAmicable(int a) {
+	private static boolean isAmicable(int a) {
 		int da = sumOfDivisors(a);   
 		int db = sumOfDivisors(da);  
 		if(da==db)
@@ -22,7 +22,7 @@ public class p021 {
 		return false;
 	}
 
-	public static int sumOfDivisors(int n) {
+	private static int sumOfDivisors(int n) {
 		int sum=0;
 		for(int i=1;i<Math.sqrt(n);i++) {
 			if(n%i==0) {

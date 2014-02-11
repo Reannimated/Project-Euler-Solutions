@@ -17,7 +17,7 @@ public class p023 {
 		System.out.println(System.currentTimeMillis()-start+"ms");
 	}
 
-	public static boolean isSumOf(boolean[] abundantNums,int n) {
+	private static boolean isSumOf(boolean[] abundantNums,int n) {
 			for (int i = 0; i <= n; i++) {
 				if (abundantNums[i] && abundantNums[n - i])
 					return true;
@@ -25,7 +25,7 @@ public class p023 {
 			return false;
 	}
 	
-	public static boolean isAbundant(int n) {
+	private static boolean isAbundant(int n) {
 		int sum = 1;
 		int sqr = (int)Math.sqrt(n);
 		for (int i = 2; i <= sqr; i++) {

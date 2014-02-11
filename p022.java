@@ -23,7 +23,7 @@ public class p022 {
 		System.out.println(System.currentTimeMillis()-start+"ms");
 	}
 	
-	public static int nameScore(String name) {
+	private static int nameScore(String name) {
 		int score=0;
 		for(int j=0;j<name.length();j++) {
 			score+=name.charAt(j)-64;
