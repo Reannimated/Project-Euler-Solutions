@@ -18,6 +18,11 @@ public class library {
 	public static boolean isPalindrome(int x) {
 		return isPalindrome(Integer.toString(x));
 	}
+	
+	//Returns the number of digits in a integer e.g. 164563 will return 6
+	public static int numberOfDigits(int n) {
+		return (int) Math.floor(Math.log10(n)+1);
+	}
 
 	//Uses trial division(1 to sqrt(n)) to verify that n is prime
 	public static boolean isPrime(int n) {
@@ -127,5 +132,22 @@ public class library {
 		for (int i = 2; i <= n; i++)
 			num = num.multiply(BigInteger.valueOf(i));
 		return num;
+	}
+	
+	public static boolean isPandigital(int n){
+		int digits = 0;
+		int count = 0;
+		int temp;
+		while (n > 0) {
+			temp = digits;
+			digits = digits | 1 << (int)((n % 10) - 1);
+			if (temp == digits) {
+				return false;
+			}
+
+			count++;
+			n /= 10;
+		}
+		return digits == (1 << count) - 1;
 	}
 }
