@@ -1,4 +1,4 @@
-
+//Run Time: 71ms
 public class p040 {
 
 	public static void main(String[] args) {
