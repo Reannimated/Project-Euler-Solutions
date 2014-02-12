@@ -1,6 +1,6 @@
 //Run Time: 278ms
 //Optimized Run Time: 12ms
-import library.library;
+import regy.library;
 public class p012 {
 
 	public static void main(String[] args) {

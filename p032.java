@@ -1,7 +1,8 @@
 //Run Time: 441ms
 import java.util.HashSet;
 import java.util.Set;
-import library.library;
+
+import regy.library;
 
 public class p032 {
 

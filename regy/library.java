@@ -1,4 +1,4 @@
-package library;
+package regy;
 
 import java.math.BigInteger;
 
@@ -134,6 +134,7 @@ public class library {
 		return num;
 	}
 	
+
 	public static boolean isPandigital(int n){
 		int digits = 0;
 		int count = 0;

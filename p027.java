@@ -1,5 +1,5 @@
 //Run Time: 65ms
-import library.library;
+import regy.library;
 
 public class p027 {
 

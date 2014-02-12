@@ -1,4 +1,4 @@
-import library.library;
+import regy.library;
 public class main
 {
 

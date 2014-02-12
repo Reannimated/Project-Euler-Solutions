@@ -1,6 +1,7 @@
 //Run Time: 1ms
-import library.library;
 import java.math.BigInteger;
+
+import regy.library;
 
 public class p015 {
 

@@ -1,5 +1,5 @@
 //Run Time: 22ms
-import library.library;
+import regy.library;
 public class p010 {
 
 	public static void main(String[] args) {
