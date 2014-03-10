@@ -8,6 +8,11 @@ public class library {
 	public static String reverse(String s) {
 		return new StringBuilder(s).reverse().toString();
 	}
+	
+	//Returns the reverse of a integer. e.g. 3419 will return 9143
+	public static int reverse(int n) {
+		return Integer.parseInt(new StringBuilder(Integer.toString(n)).reverse().toString());
+	}
 
 	//Returns true if the string reads the same forwards and backwards
 	public static boolean isPalindrome(String s) {
@@ -134,7 +139,6 @@ public class library {
 		return num;
 	}
 	
-
 	public static boolean isPandigital(int n){
 		int digits = 0;
 		int count = 0;
@@ -151,4 +155,43 @@ public class library {
 		}
 		return digits == (1 << count) - 1;
 	}
+	
+	//Returns true if an array has a next permutation and performs it. 
+	public static boolean hasNextPermutation(int[] a) {
+        int largestIndexJ = -1;
+        for (int i = a.length - 2; i >= 0; i--)
+        {
+            if (a[i] < a[i + 1])
+            {
+                largestIndexJ = i;
+                break;
+            }
+        }
+
+        if (largestIndexJ < 0) 
+            return false;
+
+        int largestIndexL = -1;
+        for (int i = a.length - 1; i >= 0; i--)
+        {
+            if (a[largestIndexJ] < a[i])
+            {
+                largestIndexL = i;
+                break;
+            }
+        }
+
+        int temp = a[largestIndexJ];
+        a[largestIndexJ] = a[largestIndexL];
+        a[largestIndexL] = temp;
+
+        for (int i = largestIndexJ + 1, j = a.length - 1; i < j; i++, j--)
+        {
+            temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+
+        return true;
+    }
 }
