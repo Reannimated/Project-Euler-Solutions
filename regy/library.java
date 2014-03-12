@@ -1,6 +1,7 @@
 package regy;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 
 public class library {
 
@@ -12,6 +13,10 @@ public class library {
 	//Returns the reverse of a integer. e.g. 3419 will return 9143
 	public static int reverse(int n) {
 		return Integer.parseInt(new StringBuilder(Integer.toString(n)).reverse().toString());
+	}
+	
+	public static BigInteger reverse(BigInteger n) {
+		return new BigInteger(reverse(n.toString()));
 	}
 
 	//Returns true if the string reads the same forwards and backwards
@@ -27,6 +32,10 @@ public class library {
 	//Returns the number of digits in a integer e.g. 164563 will return 6
 	public static int numberOfDigits(int n) {
 		return (int) Math.floor(Math.log10(n)+1);
+	}
+	
+	public static int numberOfDigits(int a, int b) {
+		return (int) Math.floor(1 + b * Math.log10(a));
 	}
 
 	//Uses trial division(1 to sqrt(n)) to verify that n is prime
@@ -194,4 +203,39 @@ public class library {
 
         return true;
     }
+	
+	//Returns true if the two integers are permutations
+	public static boolean isPermutation(int i, int j) {
+		char[] a = Integer.toString(i).toCharArray();
+		char[] b = Integer.toString(j).toCharArray();
+		Arrays.sort(a);
+		Arrays.sort(b);
+		if(Arrays.equals(a, b))
+			return true;
+		return false;
+	}
+	
+	//Returns n choose k 
+	public static BigInteger combination(int n, int k) {
+		return factorial(n).divide(factorial(n - k).multiply(factorial(k)));
+	}
+	
+	//Returns the sum of digits of a number
+	public static int sumOfDigits(int num) {
+		int sum = 0;
+		while (num != 0)
+		{
+			sum += (num%10);
+			num /= 10;
+		}
+		return sum;
+	}
+	
+	public static int sumOfDigits(BigInteger num) {
+		int sum = 0;
+		String s = num.toString();
+		for (int i = 0; i < s.length(); i++)
+			sum += s.charAt(i) - '0';
+		return sum;
+	}
 }
