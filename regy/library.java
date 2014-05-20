@@ -9,12 +9,12 @@ public class library {
 	public static String reverse(String s) {
 		return new StringBuilder(s).reverse().toString();
 	}
-	
+
 	//Returns the reverse of a integer. e.g. 3419 will return 9143
 	public static int reverse(int n) {
 		return Integer.parseInt(new StringBuilder(Integer.toString(n)).reverse().toString());
 	}
-	
+
 	public static BigInteger reverse(BigInteger n) {
 		return new BigInteger(reverse(n.toString()));
 	}
@@ -28,12 +28,12 @@ public class library {
 	public static boolean isPalindrome(int x) {
 		return isPalindrome(Integer.toString(x));
 	}
-	
+
 	//Returns the number of digits in a integer e.g. 164563 will return 6
 	public static int numberOfDigits(int n) {
 		return (int) Math.floor(Math.log10(n)+1);
 	}
-	
+
 	public static int numberOfDigits(int a, int b) {
 		return (int) Math.floor(1 + b * Math.log10(a));
 	}
@@ -92,7 +92,7 @@ public class library {
 		}
 		int[] primes = new int[count];
 		for (int i = 0, j = 0; i < boolPrime.length; i++) {
-			if (boolPrime[i]) 
+			if (boolPrime[i])
 				primes[j++] = i;
 		}
 		return primes;
@@ -113,22 +113,22 @@ public class library {
 
 		return divisors-1;
 	}
-	
+
 	//Uses prime factorization to return the number of divisors of a number
 	public static int primeFactorizationNOD(int n, int[] primes) {
 		int nod=1;
 	    int exponent;
 	    int remain = n;
-	 
+
 	    for (int i = 0; i < primes.length; i++) {
 	        if (primes[i] * primes[i] > n) {
 	            return nod * 2;
 	        }
-	 
+
 	        exponent = 1;
 	        while (remain % primes[i] == 0) {
 	            exponent++;
-	            remain = remain / primes[i];
+	            remain /= primes[i];
 	        }
 	        nod *= exponent;
 	        if (remain == 1) {
@@ -137,7 +137,7 @@ public class library {
 	    }
 		return nod;
 	}
-	
+
 	//Returns n! e.g. 6! will return 720
 	public static BigInteger factorial(int n) {
 		if (n < 0)
@@ -147,7 +147,7 @@ public class library {
 			num = num.multiply(BigInteger.valueOf(i));
 		return num;
 	}
-	
+
 	public static boolean isPandigital(int n){
 		int digits = 0;
 		int count = 0;
@@ -164,8 +164,8 @@ public class library {
 		}
 		return digits == (1 << count) - 1;
 	}
-	
-	//Returns true if an array has a next permutation and performs it. 
+
+	//Returns true if an array has a next permutation and performs it.
 	public static boolean hasNextPermutation(int[] a) {
         int largestIndexJ = -1;
         for (int i = a.length - 2; i >= 0; i--)
@@ -177,7 +177,7 @@ public class library {
             }
         }
 
-        if (largestIndexJ < 0) 
+        if (largestIndexJ < 0)
             return false;
 
         int largestIndexL = -1;
@@ -203,7 +203,7 @@ public class library {
 
         return true;
     }
-	
+
 	//Returns true if the two integers are permutations
 	public static boolean isPermutation(int i, int j) {
 		char[] a = Integer.toString(i).toCharArray();
@@ -214,12 +214,12 @@ public class library {
 			return true;
 		return false;
 	}
-	
-	//Returns n choose k 
+
+	//Returns n choose k
 	public static BigInteger combination(int n, int k) {
 		return factorial(n).divide(factorial(n - k).multiply(factorial(k)));
 	}
-	
+
 	//Returns the sum of digits of a number
 	public static int sumOfDigits(int num) {
 		int sum = 0;
@@ -230,7 +230,7 @@ public class library {
 		}
 		return sum;
 	}
-	
+
 	public static int sumOfDigits(BigInteger num) {
 		int sum = 0;
 		String s = num.toString();
