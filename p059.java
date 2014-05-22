@@ -1,9 +1,10 @@
-//Run Time: 0ms
+//Run Time: 203ms
 public class p059 {
 
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		int[] key = {103,111,100}; //Found by hand
+		int[] key = findKey();
+		System.out.println(key[0] + " " + key[1] + " " + key[2]);
 		int result = 0;
 		message = xor(message, key);
 		for(int i = 0; i < message.length; i++)
@@ -12,6 +13,39 @@ public class p059 {
 		System.out.println(result);
 		System.out.println(System.currentTimeMillis() - start + "ms");
 	}
+	
+	public static int[] findKey() {
+		int[] maxKey = null;
+		double maxScore = 0;
+		for(int a = 97; a <= 122; a++) {
+			for(int b = 97; b <= 122; b++) {
+				for(int c = 97; c <= 122; c++) {
+					int[] key = {a, b, c};
+					int[] decrypt = xor(message, key);
+					double temp = score(decrypt);
+					if(temp  >= maxScore) {
+						maxScore = temp;
+						maxKey = key;
+					}
+				}
+			}
+		}
+		return maxKey;
+	}
+	
+	public static double score(int[] message) {
+		double result = 0;
+		for(int i = 0; i < message.length; i++) {
+			if(message[i] >= 65 && message[i] <= 90)
+				result += 1;
+			else if(message[i] >= 97 && message[i] <= 122)
+				result += 2;
+			else
+				result -= 4;
+		}
+		return result;
+	}
+	
 	public static int[] xor(int[] message, int[]key) {
 		int[] result = new int[message.length];
 		for(int i = 0; i < message.length; i++) {
