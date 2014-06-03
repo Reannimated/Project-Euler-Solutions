@@ -1,9 +1,8 @@
-import java.util.Random;
+import regy.library;
 
-//54 + 102 + 145 + 58
 public class main
 {
 	public static void main(String[] args) {
-
+		System.out.println(library.primorial(1000000));
 	}
 }
