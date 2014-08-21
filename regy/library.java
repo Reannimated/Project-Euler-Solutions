@@ -268,12 +268,12 @@ public class library {
 	}
 
 	//Returns the sum of digits of a number
-	public static int sumOfDigits(int num) {
+	public static int sumOfDigits(int n) {
 		int sum = 0;
-		while (num != 0)
+		while (n != 0)
 		{
-			sum += (num%10);
-			num /= 10;
+			sum += (n % 10);
+			n /= 10;
 		}
 		return sum;
 	}

@@ -21,7 +21,7 @@ public class p033 {
 		System.out.println(System.currentTimeMillis()-start+"ms");
 	}
 
-	public static int GCD(int u, int v) {
+	private static int GCD(int u, int v) {
 		while ( v != 0) {
 			int r = u % v;
 			u = v;
