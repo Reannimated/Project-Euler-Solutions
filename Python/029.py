@@ -24,4 +24,5 @@ def run():
         for b in range(2, 101):
             num.add(a ** b)
     return len(num)
+    
 print run()

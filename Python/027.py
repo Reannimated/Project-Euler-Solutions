@@ -47,4 +47,5 @@ def run():
                 maxa = a
                 maxb = b
     return maxa * maxb
+    
 print run()

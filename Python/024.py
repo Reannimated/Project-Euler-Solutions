@@ -37,4 +37,5 @@ def run():
 	for i in range(999999):
 		next_permutation(digits)
 	return 	''.join(map(str, digits))
+    
 print run()

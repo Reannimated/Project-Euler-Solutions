@@ -34,7 +34,6 @@ def run():
     for i in primes:
         if circular_prime(i, psieve):
             result += 1
-
     return result
 
 print run()
